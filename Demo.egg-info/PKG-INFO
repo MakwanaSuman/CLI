@@ -1,3 +1,17 @@
 Metadata-Version: 2.1
 Name: Demo
-Version: 1.0
+Version: 0.0.1
+Summary: Description of your CLI tool
+Home-page: https://github.com/MakwanaSuman/CLI/tree/main
+Author: Test
+Author-email: yl@logicode.in
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+
+# How to Build a Complete Python Package Step-by-Step
+
+Do you want to know how to build a complete Python package? Well, look no further! This video will take you step-by-step through the entire process, from creating your project to publishing it on PyPI.
+
+Video: https://youtu.be/5KEObONUkik.

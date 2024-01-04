@@ -2,49 +2,10 @@ import csv
 import hashlib
 import click
 
-@click.group
+@click.group()
 def mycommands():
     print("executing")
     pass
-
-@click.command()
-@click.option('--name', prompt='Enter your name', help='Your name to be added')
-def hello(name):
-    click.echo(f"hello {name}")
-
-@click.command()
-@click.argument("todofile", type=click.Path(exists=False), required=False)
-@click.option('-n', '--name', prompt='Enter name', help='The name of to do')
-@click.option('-d', '--desc', prompt='Describe', help='Enter Description')
-def add_intofile(name, desc, todofile):
-    filename = todofile if todofile is not None else "myfile.txt"
-    with open(filename, "a+") as f:
-        f.write(f"{name}: {desc}\n")
-
-@click.command()
-@click.argument('idx', type=int, required=True)
-def delete_todo(idx):
-    with open("myfile.txt", "r") as f:
-        todo_list = f.read().splitlines()
-
-    if 0 <= idx < len(todo_list):
-        todo_list.pop(idx)
-
-        with open("myfile.txt", "w") as f:
-            f.write("\n".join(todo_list))
-            f.write("\n")
-    else:
-        click.echo(f"Index {idx} is out of range.")
-
-@click.command()
-@click.argument("todofile", type=click.Path(exists=True), required=False)
-def list_todos(todofile):
-    filename = todofile if todofile is not None else "myfile.txt"
-    with open(filename, "r") as f:
-        todo_list = f.read().splitlines()
-
-    for idx, todo in enumerate(todo_list):
-        print(f"({idx}) - {todo}")
 
 @click.command()
 @click.argument('input_file', type=click.Path(exists=True, dir_okay=False), required=False)
@@ -81,10 +42,6 @@ def hash_csv(input_file, output_file, column_index):
     #     csvwriter.writerows(hashed_data)
 
 
-mycommands.add_command(hello)
-mycommands.add_command(add_intofile)
-mycommands.add_command(delete_todo)
-mycommands.add_command(list_todos)
 mycommands.add_command(hash_csv)
 
 
