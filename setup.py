@@ -17,8 +17,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='your-cli-tool',
-    version='0.1.0',
+    name='Demo',
+    version='0.0.1',
     packages=find_packages(),
     install_requires=[
         'click',
@@ -26,15 +26,15 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'your-cli-command=yourmodule:cli_function',
+            'Demo=Demo:mycommands',
         ],
     },
-    author='Your Name',
-    author_email='your.email@example.com',
+    author='Test',
+    author_email='yl@logicode.in',
     description='Description of your CLI tool',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/your-cli-tool',
+    url='https://github.com/MakwanaSuman/CLI/tree/main',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
